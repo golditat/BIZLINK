@@ -43,9 +43,9 @@ import java.util.Date
 
 class BLViewModel: ViewModel() {
 
-    private val _projectData = MutableLiveData<Project>()
-    val projectData: LiveData<Project>
-        get() = _projectData
+    //private val _projectData = MutableLiveData<Project>()
+    //val projectData: LiveData<Project>
+    //    get() = _projectData
 
 
     private val _taskData = MutableLiveData<Task>()
@@ -108,7 +108,7 @@ class BLViewModel: ViewModel() {
 
     }
 
-    fun getProject(id:Int){
+    /*fun getProject(id:Int){
         viewModelScope.launch {
             runCatching {
                 ServiceLocator.projectDao.getProjectById(id)?:ProjectEntity(0, "Project Name", "afsgsfsdassgs2323534sfxv", 0)
@@ -118,7 +118,7 @@ class BLViewModel: ViewModel() {
                 errorsChannel.send(it)
             }
         }
-    }
+    }*/
     fun getTask(id:Int){
         viewModelScope.launch {
             runCatching {
@@ -230,7 +230,7 @@ class BLViewModel: ViewModel() {
             }
         }
     }
-    fun createProject(project: Project){
+    /*fun createProject(project: Project){
         viewModelScope.launch {
             runCatching {
                ServiceLocator.createProjectUsecase.invoke(project)
@@ -240,7 +240,7 @@ class BLViewModel: ViewModel() {
                 errorsChannel.send(it)
             }
         }
-    }
+    }*/
     fun createTask(task: Task){
         viewModelScope.launch {
             runCatching {
@@ -285,7 +285,7 @@ class BLViewModel: ViewModel() {
             }
         }
     }
-    fun subProject(code: String, id: Int){
+    /*fun subProject(code: String, id: Int){
         viewModelScope.launch {
             runCatching {
                 ServiceLocator.susProjectUsecase.invoke(code, id)
@@ -295,7 +295,7 @@ class BLViewModel: ViewModel() {
                 errorsChannel.send(it)
             }
         }
-    }
+    }*/
     fun getTaskList(){
         viewModelScope.launch {
             runCatching {
